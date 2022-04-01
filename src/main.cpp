@@ -48,7 +48,7 @@ int main(void)
     	for(size_t i = 0; i < blobies.size(); ++i)
     	{
     		Vocalizer* voc = blobies[i].getVoice();
-    		voc->emitSound();
+    		voc->emitSoundTest();
     	}
 
         // Draw

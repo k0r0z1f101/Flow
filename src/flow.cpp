@@ -41,7 +41,7 @@ namespace flow
 //		UnloadAudioStream(b_stream);   // Close raw audio stream and delete buffers from RAM
 	    cout << "dest Vocalizer" << endl;
 	}
-	void Vocalizer::emitSound() //Updated each frame
+	void Vocalizer::emitSoundTest() //Updated each frame
 	{
 		// Rewrite the sine wave.
         // Compute two cycles to allow the buffer padding, simplifying any modulation, resampling, etc.

@@ -58,7 +58,28 @@ namespace flow
 	public:
 		Vocalizer();
 		~Vocalizer();
-		void emitSound();
+		void emitSoundTest();
+	};
+
+	//syllable for the sound-word class
+	class Syllable
+	{
+
+	};
+
+	//Sound-Word structure class
+	class Word
+	{
+		std::vector<Syllable> syllables; //parts that compose the word
+		float neutralPace; //the normal pace the word is spoken
+	};
+
+	//Sound-Word Vocabulary class
+	class Vocabulary
+	{
+		std::vector<Word> questions;
+		std::vector<Word> greetings;
+		std::vector<Word> exclamations;
 	};
 //
 //	//build blobie listener class
