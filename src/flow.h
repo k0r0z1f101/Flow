@@ -64,7 +64,9 @@ namespace flow
 	//syllable for the sound-word class
 	class Syllable
 	{
-
+		float naturalFrequency; //the normal note and octave of this syllable
+		float naturalLength; //the normal time the note is spoken
+		bool pauseAtEnd; //take a pause after the syllable instead of adjusting to the next syllable, usually ends a word
 	};
 
 	//Sound-Word structure class
