@@ -17,6 +17,9 @@ using namespace chrono;
 const int LIFEPOINTMIN = 10;
 const int LIFEPOINTMAX = 20;
 
+//SYLLABLE class constants
+const float PAUSE = 0.2f;
+
 namespace flow
 {
 	//HEALTH DECLARATIONS
@@ -67,6 +70,10 @@ namespace flow
 		float naturalFrequency; //the normal note and octave of this syllable
 		float naturalLength; //the normal time the note is spoken
 		bool pauseAtEnd; //take a pause after the syllable instead of adjusting to the next syllable, usually ends a word
+	public:
+		Syllable(float nF = 440.0f, float nL = 0.5f, bool pAE = true);
+		Syllable(const Syllable& s);
+		~Syllable();
 	};
 
 	//Sound-Word structure class
