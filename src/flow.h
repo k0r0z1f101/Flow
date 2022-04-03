@@ -44,6 +44,25 @@ namespace flow
 //		~Movement() {}
 //	};
 //
+	//syllable for the sound-word class
+	class Syllable
+	{
+		float naturalFrequency; //the normal note and octave of this syllable
+		float naturalLength; //the normal time the note is spoken
+		bool pauseAtEnd; //take a pause after the syllable instead of adjusting to the next syllable, usually ends a word
+	public:
+		Syllable(float nF = 440.0f, float nL = 0.5f, bool pAE = true);
+		Syllable(const Syllable& s);
+		~Syllable();
+	};
+
+	//Sound-Word structure class
+	class Word
+	{
+		std::vector<Syllable> syllables; //parts that compose the word
+		float neutralPace; //the normal pace the word is spoken
+	};
+
 	//build blobie vocalizer class
 	class Vocalizer
 	{
@@ -62,25 +81,7 @@ namespace flow
 		Vocalizer();
 		~Vocalizer();
 		void emitSoundTest();
-	};
-
-	//syllable for the sound-word class
-	class Syllable
-	{
-		float naturalFrequency; //the normal note and octave of this syllable
-		float naturalLength; //the normal time the note is spoken
-		bool pauseAtEnd; //take a pause after the syllable instead of adjusting to the next syllable, usually ends a word
-	public:
-		Syllable(float nF = 440.0f, float nL = 0.5f, bool pAE = true);
-		Syllable(const Syllable& s);
-		~Syllable();
-	};
-
-	//Sound-Word structure class
-	class Word
-	{
-		std::vector<Syllable> syllables; //parts that compose the word
-		float neutralPace; //the normal pace the word is spoken
+		void emitSyllable(Syllable &syl);
 	};
 
 	//Sound-Word Vocabulary class

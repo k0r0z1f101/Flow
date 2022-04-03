@@ -17,22 +17,22 @@ int main(void)
 
     SetAudioStreamBufferSizeDefault(MAX_SAMPLES_PER_UPDATE);
 
-    std::vector<Blobie> blobies = {};
-
-    //instanciate Blobie
-    Blobie blobie = Blobie();
-    blobies.push_back(blobie);
-
-    std::cout << blobie.getName() << std::endl;
-    std::cout << blobie.getBirthTime() << std::endl;
-//    cout << blobie.getHealth().getFlowPoint() << endl;
-
-    //instanciate Blobie2
-    Blobie blobie2 = Blobie();
-    blobies.push_back(blobie2);
-
-    std::cout << blobie2.getName() << std::endl;
-    std::cout << blobie2.getBirthTime() << std::endl;
+//    std::vector<Blobie> blobies = {};
+//
+//    //instanciate Blobie
+//    Blobie blobie = Blobie();
+//    blobies.push_back(blobie);
+//
+//    std::cout << blobie.getName() << std::endl;
+//    std::cout << blobie.getBirthTime() << std::endl;
+////    cout << blobie.getHealth().getFlowPoint() << endl;
+//
+//    //instanciate Blobie2
+//    Blobie blobie2 = Blobie();
+//    blobies.push_back(blobie2);
+//
+//    std::cout << blobie2.getName() << std::endl;
+//    std::cout << blobie2.getBirthTime() << std::endl;
 //    cout << blobie2.getHealth().getFlowPoint() << endl;
 
 
@@ -46,11 +46,11 @@ int main(void)
         //----------------------------------------------------------------------------------
 
     	//Update Actors (blobies, notes)
-    	for(size_t i = 0; i < blobies.size(); ++i)
-    	{
-    		Vocalizer* voc = blobies[i].getVoice();
-    		voc->emitSoundTest();
-    	}
+//    	for(size_t i = 0; i < blobies.size(); ++i)
+//    	{
+//    		Vocalizer* voc = blobies[i].getVoice();
+//    		voc->emitSoundTest();
+//    	}
 
         // Draw
         //----------------------------------------------------------------------------------
