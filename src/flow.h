@@ -10,8 +10,8 @@
 #define MAX_SAMPLES               512
 #define MAX_SAMPLES_PER_UPDATE   4096
 
-using namespace std;
-using namespace chrono;
+//using namespace std;
+using namespace std::chrono;
 
 //HEALTH class constants
 const int LIFEPOINTMIN = 10;
@@ -107,7 +107,7 @@ namespace flow
 	class Blobie
 	{
 	protected:
-		string b_name;
+		std::string b_name;
 		time_t b_birthtime; //instanciation epoch in nanoseconds
 //		Movement b_movement;
 		Health b_health;
@@ -117,7 +117,7 @@ namespace flow
 		virtual ~Blobie();
 
 		//getter
-		string getName();
+		std::string getName();
 		time_t getBirthTime();
 		Health *getHealth();
 		Vocalizer *getVoice();

@@ -1,5 +1,5 @@
 #include "raylib.h"
-#include "Code_Utilities.h"
+//#include "Code_Utilities.h"
 #include <chrono>
 #include "flow.h"
 #include <stdlib.h>         // Required for: malloc(), free()
@@ -7,9 +7,11 @@
 #include <string.h>         // Required for: memcpy()
 
 //
-using namespace BdB;
-using namespace std;
-using namespace chrono;
+//using namespace BdB;
+//using namespace std;
+using namespace std::chrono;
+
+
 
 namespace flow
 {
@@ -21,7 +23,7 @@ namespace flow
 	Health::Health(const Health& copy) {
 		b_flowPoint = copy.b_flowPoint;
 	}
-	Health::~Health() { cout << "dest health" << endl; }
+	Health::~Health() { std::cout << "dest health" << std::endl; }
 
 	//getter
 	int Health::getFlowPoint() { return b_flowPoint; }
@@ -30,7 +32,7 @@ namespace flow
 	Vocalizer::Vocalizer()
 	{
 		PlayAudioStream(b_stream);        // Start processing stream buffer (no data loaded currently)
-		cout << "def Vocalizer" << endl;
+		std::cout << "def Vocalizer" << std::endl;
 	}
 	Vocalizer::~Vocalizer()
 	{
@@ -39,7 +41,7 @@ namespace flow
 //		free(b_data);                 // Unload sine wave data
 //		free(b_writeBuf);             // Unload write buffer
 //		UnloadAudioStream(b_stream);   // Close raw audio stream and delete buffers from RAM
-	    cout << "dest Vocalizer" << endl;
+		std::cout << "dest Vocalizer" << std::endl;
 	}
 	void Vocalizer::emitSoundTest() //Updated each frame
 	{
@@ -99,17 +101,46 @@ namespace flow
 
 	}
 
+	//SYLLABLE DEFINITIONS
+	Syllable::Syllable(float nF, float nL, bool pAE)
+	{
+		naturalFrequency = nF;
+		naturalLength = nL;
+		pauseAtEnd = pAE;
+		std::cout << "Syllable param" << std::endl;
+	}
+	Syllable::Syllable(const Syllable &s)
+	{
+		std::cout << "Syllable copy" << std::endl;
+	}
+	Syllable::~Syllable()
+	{
+		std::cout << "Syllable destruct" << std::endl;
+	}
+
+	enum basicDictEnum
+	{
+		LOW = 0,
+		MIDDLE = 1,
+		HIGH
+	};
+	std::vector<Syllable> basicSyllableDictionary = {
+		Syllable(340.0f),
+		Syllable(440.0f),
+		Syllable(540.0f)
+	};
+
 	//BLOBIE DEFINITIONS
 	Blobie::Blobie()
 	{
 		uint64_t ns = duration_cast<nanoseconds>(system_clock::now().time_since_epoch()).count();
 		b_birthtime = ns;
-		cout << "def blobie" << endl;
+		std::cout << "def blobie" << std::endl;
 	}
-	Blobie::~Blobie() { cout << "dest blobie" << endl; }
+	Blobie::~Blobie() { std::cout << "dest blobie" << std::endl; }
 
 	//getter
-	string Blobie::getName() { return b_name; }
+	std::string Blobie::getName() { return b_name; }
 	time_t Blobie::getBirthTime() { return b_birthtime; }
 	Health *Blobie::getHealth() { return &b_health; }
 	Vocalizer *Blobie::getVoice() { return &b_voice; }
